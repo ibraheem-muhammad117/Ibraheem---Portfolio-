@@ -55,7 +55,8 @@ export default function Portfolio() {
             </h1>
             <p className="text-2xl text-slate-300 mb-10 font-light">
               <span className="text-slate-200">Automation Developer</span> |{" "}
-              <span className="text-slate-200">Business Analyst</span>
+              <span className="text-slate-200">Business Analyst</span> |{" "}
+              <span className="text-slate-200">Sales Specialist</span>
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <a
@@ -220,8 +221,8 @@ export default function Portfolio() {
                 </div>
                 <p className="text-xl text-slate-300 font-semibold mb-4">Mobile Expert</p>
                 <p className="text-slate-400">
-                  <span className="text-white font-semibold">Skills:</span> Sales Presentations, Negotiation, Customer
-                  Service
+                  <span className="text-white font-semibold">Skills:</span> Sales Presentation, Product Demonstration,
+                  Persuasive Communication, Upselling & Cross-Selling, Negotiation
                 </p>
               </CardContent>
             </Card>
