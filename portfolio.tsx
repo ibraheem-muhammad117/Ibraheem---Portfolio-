@@ -1,10 +1,28 @@
+"use client"
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Mail, GraduationCap, Briefcase, Code, Award, ExternalLink, Zap, Brain, Database, Bot } from "lucide-react"
+import Chatbot from "./components/chatbot"
 
 export default function Portfolio() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      {/* Custom CSS for slower pulse animation */}
+      <style jsx>{`
+        @keyframes slow-pulse {
+          0%, 100% {
+            opacity: 0.2;
+          }
+          50% {
+            opacity: 0.4;
+          }
+        }
+        .animate-slow-pulse {
+          animation: slow-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+      `}</style>
+
       {/* Subtle Animated Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -inset-10 opacity-10">
@@ -16,24 +34,26 @@ export default function Portfolio() {
 
       {/* Header Section */}
       <header className="relative z-10 backdrop-blur-sm bg-black/20 border-b border-slate-700/50">
-        <div className="max-w-6xl mx-auto px-6 py-12">
-          <div className="text-center">
-            <div className="mb-8">
-              <div className="relative inline-block">
+        <div className="max-w-6xl mx-auto px-6 py-16">
+          <div className="flex flex-col items-center text-center">
+            <div className="mb-12">
+              <div className="relative inline-block group">
+                {/* Slower glowing ring effect */}
+                <div className="absolute -inset-4 bg-gradient-to-r from-slate-500 via-slate-400 to-slate-500 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-500 animate-slow-pulse"></div>
+                <div className="absolute -inset-2 bg-gradient-to-r from-slate-600 to-slate-500 rounded-full opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+
                 <img
-                  src="/images/profile.jpg"
+                  src="/images/linkedin-profile.jpg"
                   alt="Ibraheem Muhammad"
-                  className="w-32 h-32 rounded-full border-4 border-slate-600/50 shadow-2xl mx-auto mb-4 object-cover"
+                  className="relative w-48 h-48 rounded-full border-4 border-white/20 shadow-2xl object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-r from-slate-600 to-slate-500 rounded-full flex items-center justify-center animate-pulse">
-                  <Bot className="w-4 h-4 text-white" />
-                </div>
               </div>
             </div>
-            <h1 className="text-6xl font-bold bg-gradient-to-r from-slate-200 via-slate-100 to-slate-300 bg-clip-text text-transparent mb-4">
+
+            <h1 className="text-6xl font-bold bg-gradient-to-r from-slate-200 via-slate-100 to-slate-300 bg-clip-text text-transparent mb-6">
               Ibraheem Muhammad
             </h1>
-            <p className="text-2xl text-slate-300 mb-8 font-light">
+            <p className="text-2xl text-slate-300 mb-10 font-light">
               <span className="text-slate-200">Automation Developer</span> |{" "}
               <span className="text-slate-200">Business Analyst</span>
             </p>
@@ -552,6 +572,9 @@ export default function Portfolio() {
           </div>
         </div>
       </footer>
+
+      {/* Chatbot Component */}
+      <Chatbot />
     </div>
   )
 }
